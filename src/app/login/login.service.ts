@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -8,6 +9,11 @@ import { HttpClient } from '@angular/common/http';
 export class LoginService {
 
 
+  constructor(private http: HttpClient) { }
 
-  constructor() { }
+  getCustomerView(customerId : number ) : Observable<any>{
+    return this.http.get('http://localhost:8080/customer/' + customerId);
+  }
+  
+
 }
