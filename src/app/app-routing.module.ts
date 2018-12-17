@@ -14,7 +14,7 @@ export const routes: Routes = [
      component : LoginComponent 
    },
    {
-     path : 'customer',
+     path : 'customer/:id',
      component : CustomerComponent
    }
  ];

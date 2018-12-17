@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import {Customer} from './customer'
+
 
 
 @Injectable({
@@ -11,15 +11,15 @@ export class CustomerService {
 
 
 
-customerUrl = 'http://localhost8080/customers';
+customerAccountsUrl = '/customers/{customerId}/accounts';
 
 
 constructor(private http: HttpClient) { }
 
-getCustomers() {
+getCustomer(customerId) {
   return this
          .http
-         .get(`${this.customerUrl}`);
+         .get(`${this.customerAccountsUrl + customerId}`);
 }
 
 

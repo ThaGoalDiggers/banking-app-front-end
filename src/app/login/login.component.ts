@@ -9,11 +9,19 @@ import {LoginService} from './login.service'
 })
 export class LoginComponent implements OnInit {
 
-  constructor(loginService : LoginService) { }
 
-  ngOnInit() {
+  id : any;
+ 
+  constructor(private loginService : LoginService) { 
+  
   }
 
+  ngOnInit() {
+  
+  }
 
+// loadCustomer(id){
+//     this.loginService.loadCustomerById(id);)
 
-}
+//     }
+ }
