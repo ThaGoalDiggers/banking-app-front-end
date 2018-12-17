@@ -22,8 +22,8 @@ getCustomer(customerId) {
          .get(`${this.customerAccountsUrl + customerId}`);
 }
 
-getAll():Observable<any>{
-  return this.http.get('//localhost:8080/customers');
+getAll(): Observable<any> {
+  return this.http.get('http://localhost:8080/customers');
 }
 
 
