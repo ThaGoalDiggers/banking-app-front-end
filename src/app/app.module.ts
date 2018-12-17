@@ -9,6 +9,8 @@ import { AccountComponent } from './account/account-component/account.component'
 import { BillsComponentComponent } from './bill/bill-component/bill-component.component';
 import { TransactionComponent } from './transaction/transaction/transaction.component';
 import {HttpClientModule} from '@angular/common/http'
+import { CustomerService } from './customer/customer.service';
+import { LoginService } from './login/login.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import {HttpClientModule} from '@angular/common/http'
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [CustomerService,
+  LoginService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
