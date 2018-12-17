@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,10 @@ import { TransactionComponent } from './transaction/transaction/transaction.comp
 import { HttpClientModule } from '@angular/common/http';
 import { CustomerService } from './customer/customer.service';
 import { LoginService } from './login/login.service';
+
+const appRoutes: Routes = [
+  { path: 'customer/:id', component: CustomerComponent }
+];
 
 @NgModule({
   declarations: [
@@ -24,7 +29,8 @@ import { LoginService } from './login/login.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule,
   ],
   providers: [CustomerService,
   LoginService
