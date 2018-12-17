@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {CustomerService } from '../customer.service'
+import {CustomerService } from '../customer.service';
 import { from } from 'rxjs';
 import { Customer } from '../customer';
 
@@ -11,15 +11,15 @@ import { Customer } from '../customer';
 })
 export class CustomerComponent implements OnInit {
 
-  customerAccounts$ : Object;
+  customerAccounts$: Object;
 
-  constructor( private customerService : CustomerService) { }
-  
+  constructor(private customerService: CustomerService) {}
+
 
   ngOnInit() {
    this.customerService
    .getCustomer(1)
-   .subscribe(customerService => this. customerAccounts$ = customerService)
+   .subscribe(customerService => this. customerAccounts$ = customerService);
   }
 
 }

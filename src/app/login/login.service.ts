@@ -13,10 +13,10 @@ export class LoginService {
 
 
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  loadCustomerById(id :number){
-    return this.http.get('https://localhoat8080/customers/' + id);
+  loadCustomerById(id: string) {
+    return this.http.get('https://localhost:8080/customers/' + id);
   }
 
 }

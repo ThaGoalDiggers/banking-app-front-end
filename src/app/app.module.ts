@@ -8,7 +8,7 @@ import { CustomerComponent } from './customer/customer-component/customer.compon
 import { AccountComponent } from './account/account-component/account.component';
 import { BillsComponentComponent } from './bill/bill-component/bill-component.component';
 import { TransactionComponent } from './transaction/transaction/transaction.component';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
