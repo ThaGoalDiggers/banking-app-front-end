@@ -15,7 +15,7 @@ export class LoginService {
 
   constructor(private http: HttpClient) {}
 
-  loadCustomerById(id: string) {
+  loadCustomerById(id: number) {
     return this.http.get('https://localhost:8080/customers/' + id);
   }
 

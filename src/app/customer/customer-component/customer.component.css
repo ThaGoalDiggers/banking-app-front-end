@@ -1,3 +1,7 @@
-#accountInfo{
-margin-right : 60%;
+*{
+font-size: 18pt;
+}
+
+th{
+    background-color: #4CAF50; 
 }

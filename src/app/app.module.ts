@@ -12,6 +12,7 @@ import { TransactionComponent } from './transaction/transaction/transaction.comp
 import { HttpClientModule } from '@angular/common/http';
 import { CustomerService } from './customer/customer.service';
 import { LoginService } from './login/login.service';
+import {FormsModule} from '@angular/forms'
 
 const appRoutes: Routes = [
   { path: 'customer/:id', component: CustomerComponent }
@@ -31,6 +32,7 @@ const appRoutes: Routes = [
     AppRoutingModule,
     HttpClientModule,
     RouterModule,
+    FormsModule
   ],
   providers: [CustomerService,
   LoginService
