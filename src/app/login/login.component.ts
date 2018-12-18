@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
 
   id: number;
   allAccounts: Object;
-  customers: Object;
+  // customers: Object;
   constructor(private customerService: CustomerService) {
    
   }
@@ -22,17 +22,10 @@ export class LoginComponent implements OnInit {
   ngOnInit() {}
 
   loadAccounts(id: number) {
-    this.customerService.getAccountsByCustomerId(id).subscribe(
-      data =>this.allAccounts = data );
+    this.customerService.customerId = id;
   }
-  loadCustomer(id: number) {
-    this.customerService.getCustomer(id).subscribe(
-      data =>this.customers = data );
-  }
+ 
 
-  onClick(id: number){
-    this.loadAccounts(id);
-    this.loadCustomer(id);  
-  }
+
 
 }

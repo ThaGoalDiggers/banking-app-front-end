@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Injectable } from '@angular/core';
 import {CustomerService } from '../customer.service';
 import { from } from 'rxjs';
-
 import {ActivatedRoute} from '@angular/router'
 
 
@@ -15,7 +13,7 @@ import {ActivatedRoute} from '@angular/router'
 })
 
 export class CustomerComponent implements OnInit {
-   customers: Object;
+
   
   allAccounts: Object;
   
@@ -28,15 +26,8 @@ export class CustomerComponent implements OnInit {
 
 
   ngOnInit() {
- this.getAccounts(this.customerService.customerId);
- this.getCustomer(this.customerService.customerId);
-  }
-
-  getCustomer(customerId: number) {
-    this.customerService.getCustomer(customerId).subscribe(
-      customer => {this.customers = customer;}
-    )
-    }
+     this.getAccounts(this.customerService.customerId);
+   }
 
   getAccounts(customerId:number){
     return this.customerService.getAccountsByCustomerId(customerId)

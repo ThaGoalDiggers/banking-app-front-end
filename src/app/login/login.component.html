@@ -3,6 +3,6 @@
   <div class="container">
     <label for="uname"><b>User Id</b></label>
     <input type="text" [(ngModel)]="id" placeholder="Enter User Id" name="customerId" required>
-    <button type="button" (click)="onClick(id)" routerLink="/customers">Login</button>
+    <button type="button" (click)="loadAccounts(id)" routerLink="/customers">Login</button>
   </div>
 </form>
