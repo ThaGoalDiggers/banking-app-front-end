@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {LoginService} from './login.service';
 import { CustomerService } from '../customer/customer.service';
-import { CustomerComponent } from '../customer/customer-component/customer.component';
 
 
 @Component({

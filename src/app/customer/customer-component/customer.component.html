@@ -23,6 +23,6 @@
 <div class="SerachBills">
     <h3>Get Bills By Account Id</h3>
    <input type="text" [(ngModel)]="accountId" placeholder="Enter Account ID" name="accountId" required>
-   <button type="button" (click)="getBill(accountId)">&nbsp; Submit</button>
+   <button type="button" routerLink="/account/bills" (click)="setAccountId(accountId)">&nbsp; Submit</button>
   </div>
-<app-bill-component></app-bill-component>
+

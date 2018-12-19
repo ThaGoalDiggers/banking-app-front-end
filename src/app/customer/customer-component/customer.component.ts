@@ -17,12 +17,11 @@ export class CustomerComponent implements OnInit {
   
   allAccounts: Object;
 
-  allBills: Object;
+  
 
   constructor(private customerService: CustomerService, private route:ActivatedRoute) {
     this.route.params.subscribe(params => this.allAccounts = params.id);
-    this.route.params.subscribe(params => this.allBills = params.id);
-    
+  
   }
 
 
@@ -37,10 +36,10 @@ export class CustomerComponent implements OnInit {
     .subscribe( data => {this.allAccounts = data});
   }
 
-  getBill(id:number){
+  
+  setAccountId(id: number) {
     this.customerService.accountId = id;
-    return this.customerService.getBillsByAccountId(id)
-    .subscribe(data => {this.allBills = data});
-  }
+
+}
 
 }

@@ -28,8 +28,8 @@ getAccountsByCustomerId(id: number): Observable<Object>{
 }
 
 getBillsByAccountId(id:number):Observable<Object>{
- id = this.accountId;
-let url = 'http://localhost:8080//accounts/'+id+'/bills'
+ this.accountId - id;
+let url = 'http://localhost:8080//accounts/'+this.accountId+'/bills'
 return this.http.get(url);
 }
 
