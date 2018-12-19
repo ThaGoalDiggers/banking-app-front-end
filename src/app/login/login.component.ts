@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {LoginService} from './login.service';
+import { CustomerService } from '../customer/customer.service';
+import { CustomerComponent } from '../customer/customer-component/customer.component';
 
 
 @Component({
@@ -10,14 +12,19 @@ import {LoginService} from './login.service';
 export class LoginComponent implements OnInit {
 
 
-  id: string;
-
-  constructor(private loginService: LoginService) {}
+  id: number;
+  
+  constructor(private customerService: CustomerService) {
+   
+  }
 
   ngOnInit() {}
 
-  loadCustomer(id: string) {
-    this.loginService.loadCustomerById(this.id);
+  loadAccounts(id: number) {
+    this.customerService.customerId = id;
   }
+ 
+
+
 
 }

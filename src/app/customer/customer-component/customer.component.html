@@ -1,12 +1,28 @@
-
-<h1>Accounts</h1>
-
-<ul  id="accountInfo">
-  <li><strong>accountType:</strong> {{ customerAccounts$.type }}</li>
-  <li><strong>nickname:</strong> {{ customerAccounts$.nickName }}</li>
-  <li><strong>rewards:</strong> {{ customerAccounts$.rewards }}</li>
-  <li><strong>balance you broke fool:</strong> {{ customerAccounts$.balance }}</li>
-</ul>
-
-
-
+<div class="accountTable">
+<table class="table">
+    <tr>
+      <th scope="col">Owner</th>
+      <th scope="col"> Account Id</th>
+      <th scope="col">Account Nickname</th>
+      <th scope="col">Account Type</th>
+      <th scope="col">Rewards</th>
+      <th scope="col">Balance</th> 
+    </tr>
+        <tbody *ngFor="let account of allAccounts">
+          <tr>
+             <td>{{account.customer.firstName}} &nbsp; {{account.customer.lastName}}</td>
+             <td>{{account.id}}</td>
+             <td>{{account.nickName}}</td>
+             <td>{{account.accountType}}</td> 
+             <td>{{account.rewards}}</td>
+             <td>{{account.balance}}</td>
+         </tr>
+        </tbody>
+</table>
+</div>
+<div class="SerachBills">
+    <h3>Get Bills By Account Id</h3>
+   <input type="text" [(ngModel)]="accountId" placeholder="Enter Account ID" name="accountId" required>
+   <button type="button" (click)="getBill(accountId)">&nbsp; Submit</button>
+  </div>
+<app-bill-component></app-bill-component>
