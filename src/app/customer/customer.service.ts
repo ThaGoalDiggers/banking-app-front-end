@@ -15,6 +15,9 @@ export class CustomerService {
 
 customerId: number;
 
+accountId: number;
+
+
 constructor(private http: HttpClient) { }
 
 getAccountsByCustomerId(id: number): Observable<Object>{
@@ -24,6 +27,11 @@ getAccountsByCustomerId(id: number): Observable<Object>{
   
 }
 
+getBillsByAccountId(id:number):Observable<Object>{
+ id = this.accountId;
+let url = 'http://localhost:8080//accounts/'+id+'/bills'
+return this.http.get(url);
+}
 
 
 }

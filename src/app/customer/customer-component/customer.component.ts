@@ -16,22 +16,31 @@ export class CustomerComponent implements OnInit {
 
   
   allAccounts: Object;
-  
 
+  allBills: Object;
 
   constructor(private customerService: CustomerService, private route:ActivatedRoute) {
-    this.route.params.subscribe(params => this.allAccounts = params.id)
+    this.route.params.subscribe(params => this.allAccounts = params.id);
+    this.route.params.subscribe(params => this.allBills = params.id);
     
   }
 
 
   ngOnInit() {
      this.getAccounts(this.customerService.customerId);
+    
+     
    }
 
   getAccounts(customerId:number){
     return this.customerService.getAccountsByCustomerId(customerId)
     .subscribe( data => {this.allAccounts = data});
+  }
+
+  getBill(id:number){
+    this.customerService.accountId = id;
+    return this.customerService.getBillsByAccountId(id)
+    .subscribe(data => {this.allBills = data});
   }
 
 }

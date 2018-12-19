@@ -13,8 +13,7 @@ export class LoginComponent implements OnInit {
 
 
   id: number;
-  allAccounts: Object;
-  // customers: Object;
+  
   constructor(private customerService: CustomerService) {
    
   }

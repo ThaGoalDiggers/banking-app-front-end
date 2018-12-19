@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CustomerService } from 'src/app/customer/customer.service';
 
 @Component({
   selector: 'app-bill-component',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bill-component.component.css']
 })
 export class BillsComponentComponent implements OnInit {
+  
+  
+  id: number;
 
-  constructor() { }
+  constructor(private customerService: CustomerService) {}
+   
 
   ngOnInit() {
   }
-
 }
