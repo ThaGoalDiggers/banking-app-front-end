@@ -1,26 +1,27 @@
 <div class="BillsTable">
     <table class="table">
         <tr>
-        <th scope="col">Account Id</th> 
-        <th scope="col">Status</th>
-        <th scope="col">Payee</th>
-        <th scope="col">NickName</th>
-        <th scope="col">Creation Date</th>
-        <th scope="col">Upcoming Payment</th>
-        <th scope="col">Recurring Date</th>
-        <th scope="col">Payment Amount</th>  
+            <th scope="col">Account Id</th> 
+            <th scope="col">Status</th>
+            <th scope="col">Payee</th>
+            <th scope="col">NickName</th>
+            <th scope="col">Creation Date</th>
+            <th scope="col">Upcoming Payment</th>
+            <th scope="col">Recurring Date</th>
+            <th scope="col">Payment Amount</th>  
         </tr>    
-            <tbody *ngFor= "let bill of bills">
-                <tr>
-                    <td> {{bill.id}}</td>
-                    <td>{{bill.status}}</td>
-                    <td>{{bill.payee}}</td>
-                    <td>{{bill.nickName}}</td> 
-                    <td>{{bill.creationDate}}</td>
-                    <td>{{bill.upcomingPayment}}</td>
-                    <td>{{bill.recurringDate}}</td> 
-                    <td>{{bill.paymentAmount}}</td>
-                </tr>
-            </tbody>
-   </table>
-</div> 
+        
+        <tbody *ngFor= "let bill of bills">
+            <tr>
+                <td>{{ bill.id }}</td>
+                <td>{{ bill.status }}</td>
+                <td>{{ bill.payee }}</td>
+                <td>{{ bill.nickName }}</td> 
+                <td>{{ bill.creationDate }}</td>
+                <td>{{ bill.upcomingPayment }}</td>
+                <td>{{ bill.recurringDate }}</td> 
+                <td>{{ bill.paymentAmount }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

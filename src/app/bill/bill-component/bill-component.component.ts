@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { CustomerService } from 'src/app/customer/customer.service';
-import {ActivatedRoute} from '@angular/router'
+import { AccountService } from 'src/app/account/account.service';
+import { ActivatedRoute } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-bill-component',
@@ -8,23 +10,22 @@ import {ActivatedRoute} from '@angular/router'
   styleUrls: ['./bill-component.component.css']
 })
 export class BillsComponentComponent implements OnInit {
-  
+
 
   bills: Object;
 
-  constructor(private customerService: CustomerService, private route:ActivatedRoute) {
-   this.route.params.subscribe(params => this.bills = params.id);
-    
+  constructor(private accountService: AccountService, private route: ActivatedRoute) {
+    this.route.params.subscribe(params => this.bills = params.id);
   }
-   
+
 
   ngOnInit() {
     this.getBill();
   }
 
-  getBill(){
-    return  this.customerService.getBillsByAccountId(this.customerService.accountId)
-    .subscribe(res=>this.bills=res);
+  getBill() {
+    return  this.accountService.getBillsByAccountId(this.accountService.accountId)
+    .subscribe(res => this.bills = res);
   }
 
 
